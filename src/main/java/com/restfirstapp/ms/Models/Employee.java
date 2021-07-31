@@ -3,15 +3,20 @@ package com.restfirstapp.ms.Models;
 import jdk.nashorn.internal.objects.annotations.Getter;
 import jdk.nashorn.internal.objects.annotations.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Employee {
-    private @Id @GeneratedValue Long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
+    private Long id;
+    @Column
     private String firstName;
+    @Column
     private String lastName;
+    @Column
     private String description;
 
     private Employee() {
